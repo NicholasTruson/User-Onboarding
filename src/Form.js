@@ -51,3 +51,15 @@ const UserForm = ({ errors, touched, values, status }) => {
 }
 
 // *** FORMIK - USER FROM *** //
+
+const FormikUserForm = withFormik({
+    mapPropsToValues({ username, email }) {
+        return {
+            username: username || '',
+            email: email || ''
+        };
+      },
+
+})(UserForm);
+
+export default FormikUserForm;
