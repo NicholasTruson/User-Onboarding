@@ -1,9 +1,9 @@
 // *** IMPORTS *** //
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
-import * as Yup from 'yup';
+//import * as Yup from 'yup';
 
 // *** USER FORM *** //
 
@@ -53,10 +53,11 @@ const UserForm = ({ errors, touched, values, status }) => {
 // *** FORMIK - USER FROM *** //
 
 const FormikUserForm = withFormik({
-    mapPropsToValues({ username, email }) {
+    mapPropsToValues({ username, email, password }) {
         return {
             username: username || '',
-            email: email || ''
+            email: email || '',
+            password: password || ''
         };
       },
 
